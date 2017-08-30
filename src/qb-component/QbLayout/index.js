@@ -1,3 +1,4 @@
 import QbLayout from './QbLayout';
+import QbSimpleLayout from './QbSimpleLayout';
 
-export default QbLayout;
+export { QbLayout as default, QbSimpleLayout};

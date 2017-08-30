@@ -3,7 +3,7 @@
  */
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom';
-import QbLayout from './QbLayout';
+import QbLayout, { QbSimpleLayout } from './QbLayout';
 import './scss/_variables.scss';
 import {NAV_ITEM_LIST} from './common/const';
 import Routers from './router';

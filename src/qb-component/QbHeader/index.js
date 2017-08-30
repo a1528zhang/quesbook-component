@@ -1,3 +1,4 @@
 import QbHeader from './QbHeader';
+import QbSimpleHeader from './QbSimpleHeader';
 
-export default QbHeader;
+export { QbHeader as default, QbSimpleHeader };
