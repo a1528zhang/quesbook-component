@@ -5,7 +5,7 @@ import React, {Component} from 'react';
 
 class QbInput extends Component {
     render() {
-        const {placeHolder, className, size, style, changeHandler} = this.props;
+        const {placeHolder, className, size, style, changeHandler, children} = this.props;
         let height = 38;
         switch (size) {
             case 'small':
@@ -19,8 +19,17 @@ class QbInput extends Component {
                 break;
         }
         let finallClass = className? finallClass = className +' form-control': 'form-control';
+        let inputClass = '';
+        let additionButton = null;
+        if (children) {
+            inputClass = 'input-group';
+            additionButton = (
+                <span className="input-group-addon" style={{borderRight: 0, background: '#ffffff'}}>{children}</span>
+            );
+        }
         return (
-            <div style={{height: height}}>
+            <div style={{height: height}} className={inputClass}>
+                {additionButton}
                 <input type='text'
                              className={finallClass}
                              placeholder={placeHolder}

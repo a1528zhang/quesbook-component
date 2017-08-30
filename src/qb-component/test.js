@@ -125,7 +125,9 @@ export default class Test extends Component {
                 <QbCheckBox label="hello" changeHandler={() => alert('hi')} fontStyle={{ fontSize: 16 }} />
                 <QbRadio label="hello" name="1" value={1} changeHandler={(value) => console.log('hello', value)} fontStyle={{ fontSize: 16 }} />
                 <QbRadio label="hi" name='1' value={2} changeHandler={(value) => console.log('hello', value)} fontStyle={{ fontSize: 16 }} />
-                <QbInput size="small" changeHandler={(e) => alert(e.target.value)} />
+                <QbInput size="small" changeHandler={(e) => alert(e.target.value)}>
+                    @
+                </QbInput>
                 <QbModal target="modal" >
                     <QbModalHeader>
                         <div>header</div>
@@ -140,6 +142,7 @@ export default class Test extends Component {
                 npm
                 <QbDropDown inputType="input" btnStyle={{width: 350, textAlign: 'left'}}
                             dropdownStyle={{width: 400}} compStyle={{position: 'relative', width: 400}}
+                            size="large"
                             content ={dropDownContent} onChange={(data)=> {
                                 console.log('TAg data:', data);
                                 this.setState({
@@ -147,8 +150,9 @@ export default class Test extends Component {
                                 });
                 }}/>
                 <QbSwitcher switchState={this.state.switchState} clickHandler={this.switchHandler.bind(this)}/>
-                <QbTimePicker ensureTime={(time)=> console.log('Tag time is:', time)}/>
-                <QbDatePicker onDatesChange = {this.dateChange.bind(this)}/>
+                <QbTimePicker ensureTime={(time)=> console.log('Tag time is:', time)} size="large"
+                              btnStyle={{width: 100, height: 52, fontSize: 20}}/>
+                <QbDatePicker onDatesChange = {this.dateChange.bind(this)} style={{width: 500}}/>
                 <QbButton label="show message"
                     className="btn dark alternate"
                     size="large"

@@ -39,9 +39,18 @@ CalendarDay--selected-span:active{
 }
 .DateRangePickerInput {
   border-radius: 5px;
+  width: 100%;
+  display: flex;
+}
+.DateRangePickerInput__arrow {
+  align-items: center;
+  display: flex;
 }
 .DateInput {
   border-radius: 5px;
+  flex: 1;
+  display: flex;
+  justify-content: center;
 }
 .CalendarDay--selected-start {
   border-radius: 5px 0 0 5px;
@@ -53,4 +62,9 @@ CalendarDay--selected-span:active{
 }
 .DateInput__display-text--focused {
   background: #ffffff
+}
+
+.DateRangePicker{
+  height: 100%;
+  width: 100%;
 }

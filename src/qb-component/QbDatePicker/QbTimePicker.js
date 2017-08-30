@@ -77,10 +77,9 @@ class QbTimePicker extends Component {
         return (
             <div style={{height: finalStyle.height, position: 'relative'}}>
                 <button className="btn btn-secondary"
-                        style={{...btnStyle,
-                    ...style.button.publicStyle,
+                        style={{...style.button.publicStyle,
                     height: finalStyle.height,
-                    fontSize: finalStyle.fontSize}} onClick={this.toggleDisplayPicker.bind(this)}>{time}</button>
+                    fontSize: finalStyle.fontSize, ...btnStyle,}} onClick={this.toggleDisplayPicker.bind(this)}>{time}</button>
                 <div className="dropdown-menu dropdown-menu-left"
                      style={{...style.timePicker, display: display}}>
                     <div style={style.hourPicker}>

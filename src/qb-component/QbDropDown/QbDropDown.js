@@ -24,7 +24,7 @@ class QbDropDown extends Component {
     renderInputComp() {
         const {compClass,
             compStyle, inputType, btnStyle, size, inputClassName, dropdownStyle, onChange,
-            content
+            content, inputStyle
         } = this.props;
         let children;
         if (inputType === 'button') {
@@ -85,9 +85,11 @@ class QbDropDown extends Component {
                     </div>
                 );
             case 'input':
+                let finalInputStyle = eval("style.input."+ (size?size:"default"));
+                console.log('Tg input st :', finalInputStyle, size);
                 return (
-                    <div className={compClass} style={{...style.inputStyle, ...compStyle}}>
-                        <input type="text" data-toggle="dropdown" className="form-control" onChange={(e)=> {
+                    <div className={compClass} style={{...finalInputStyle, position: 'relative', ...compStyle}}>
+                        <input type="text" style={{...finalInputStyle, ...inputStyle}} data-toggle="dropdown" className="form-control" onChange={(e)=> {
                             this.setState({
                                 keyword: e.target.value
                             });
@@ -133,8 +135,23 @@ const style = {
             margin: '13px 62px',
         }
     },
-    inputStyle: {
-        position: 'relative',
+    input: {
+        small: {
+            height: 30,
+            fontSize: 14,
+        },
+        default: {
+            height: 38,
+            fontSize: 16,
+        },
+        large: {
+            height: 52,
+            fontSize: 20,
+        },
+        blockLarge: {
+            height: 52,
+            fontSize: 20,
+        }
     },
 };
 
