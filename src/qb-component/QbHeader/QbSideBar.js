@@ -33,6 +33,9 @@ class QbSideBar extends Component {
                         {this.renderUserIconSection(currentUser)}
                         {this.renderUserExamSection(currentUser)}
                         <div className='col-lg-12 section-user'>
+                            <div onClick={this.props.onClick_MyClass}>
+                                My Class
+                            </div>
                             <div onClick={this.props.onClick_Setting}>
                                 My Account
                             </div>

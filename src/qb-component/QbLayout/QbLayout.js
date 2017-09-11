@@ -74,6 +74,10 @@ class QbLayout extends Component {
         // });
     }
 
+    onClick_MyClass() {
+        window.location.href = window.location.origin + '/eclass';
+    }
+
     onClick_SignOut() {
 
         let token = Cookies.get(TOKEN_KEY);
@@ -109,7 +113,9 @@ class QbLayout extends Component {
 
         return (
             <div className="layout-ct">
-                <QbHeader messageId={messageId} client={client} currentUser={currentUser} navItemList={this.state.navItemList} onClick_SignOut={this.onClick_SignOut.bind(this)} onClick_Setting={this.onClick_Setting.bind(this)}/>
+                <QbHeader messageId={messageId} client={client} currentUser={currentUser} navItemList={this.state.navItemList} onClick_SignOut={this.onClick_SignOut.bind(this)}
+                    onClick_MyClass={this.onClick_MyClass.bind(this)}
+                    onClick_Setting={this.onClick_Setting.bind(this)}/>
                 <div className="body-content">
                     {this.props.children}
                 </div>

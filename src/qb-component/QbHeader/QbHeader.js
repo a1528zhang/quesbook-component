@@ -110,8 +110,8 @@ class QbHeader extends Component {
         ret = this.state.linkItems.map((item, index) => {
             return (
                 item.isRedirect
-                ? renderExternalLink(item)
-                : renderInnerLink(item)
+                ? this.renderExternalLink(item, index)
+                : this.renderInnerLink(item, index)
             );
         });
 
@@ -132,25 +132,25 @@ class QbHeader extends Component {
         }
     }
 
-    renderInnerLink(props) {
+    renderInnerLink(item, index) {
         return (
-            <li className={props.item.isActive
+            <li key={index} className={item.isActive
                 ? 'active'
                 : ''}>
-                <Link to={props.item.href} onClick={props.onClick_NavLinkItem}>
-                    {props.item.label}
+                <Link to={item.href} onClick={this.onClick_NavLinkItem.bind(this, item)}>
+                    {item.label}
                 </Link>
             </li>
         ); 
     }
 
-    renderExternalLink(props) {
+    renderExternalLink(item, index) {
         return (
-            <li className={props.item.isActive
+            <li key={index} className={item.isActive
                 ? 'active'
                 : ''}>
-                <a href='/eclass' onClick={props.onClick_NavLinkItem}>
-                    {props.item.label}
+                <a href='/eclass' onClick={this.onClick_NavLinkItem.bind(this, item)}>
+                    {item.label}
                 </a>
             </li>
         ); 
@@ -212,7 +212,8 @@ class QbHeader extends Component {
                 currentUser={currentUser}
                 isShow={this.state.isShowSideBar}
                 onHideSideBar={this.hideSideBar.bind(this)}
-                onClick_Setting={this.props.onClick_Setting} 
+                onClick_MyClass={this.props.onClick_MyClass} 
+                onClick_Setting={this.props.onClick_Setting}
                 onClick_SignOut={this.onClick_SignOut.bind(this)}/>);
         }
     }
