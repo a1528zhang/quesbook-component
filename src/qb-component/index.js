@@ -12,7 +12,7 @@ class App extends Component {
     render() {
         return(
             <div>
-                <QbLayout navItemList={NAV_ITEM_LIST}>
+                <QbLayout navItemList={NAV_ITEM_LIST} gqlUrl="https://stg.quesbook.com/graphql">
                     <Routers/>
                 </QbLayout>
             </div>

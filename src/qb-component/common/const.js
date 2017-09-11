@@ -1,5 +1,5 @@
-export const API_URL = 'https://stg.quesbook.com';
-export const GQL_URL = `${API_URL}/graphql`;
+export let QB_COMPONENT_API_URL = 'https://stg.quesbook.com';
+export let QB_COMPONENT_GQL_URL = `${QB_COMPONENT_API_URL}/graphql`;
 // export const GQL_URL = 'http://localhost:8080/graphql';
 export const TOKEN_KEY = 'jwt';
 
